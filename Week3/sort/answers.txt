@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: It's significantly faster when the list is sorted
+
+sort2 uses: Merge Sort
+
+How do you know?: No matter what file I try, it always takes the same time for a file with the same size and the time doesn't increase exponentially with more things to sort
+
+sort3 uses: Selection Sort
+
+How do you know?: Run time increses exponentially with n, but there is no difference for sorted and unsorted lists
