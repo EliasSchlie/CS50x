@@ -1,0 +1,11 @@
+sqlite> SELECT AVG(energy) from songs;
+0.65906
+sqlite> SELECT AVG(valence) from songs;
+0.484443
+sqlite> SELECT AVG(danceability) from songs;
+0.71646
+
+I would characterize the persons "Audio aura" as "Sad, but still dancing" as the average valence is quite low, but the danceability still high.
+
+This way of calculating it might not be perfect, because it just takes the 100 favorite songs into account.
+Better would be to use a database with all songs the user listened to and calculate the averages from all those songs multiplied by how often the user listened to them.
