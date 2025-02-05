@@ -1,0 +1,28 @@
+HTML I used:
+
+<section> to break order parts of pages
+<h1> for headers
+<h2> for headers
+<h3> for headers
+<ul> for lists
+<li> for lists
+<strong> To emphasize things
+<br> for line breaks
+<link> to embeed .css...
+<a> to embed a YouTube video
+
+Some of my css:
+
+margin: 10px;
+font-family: "Courier New", Courier, monospace;
+color: #ffffff;
+line-height: 1.6;
+background: #000000;
+padding-bottom: 50px;
+
+
+Bootstrap:
+I used bootstrap for creating an accordion section in on Battle Plan page
+
+Javascript:
+I used JS to create a form where you can submit how long you want to live and it shows previous answers
