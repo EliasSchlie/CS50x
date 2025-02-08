@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h1>Portfolio</h1>
+    <br>
+    <h4>
+        Cash: {{ cash }}
+    </h4>
+    <h4>
+        Total: {{ total }}
+    </h4>
+    <br><br>
+    {% if stocks %}
+        <h2>Stocks</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>Total Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stocks %}
+                    <tr>
+                        <td>{{ stock }}</td>
+                        <td>{{ stocks[stock]["shares"] }}</td>
+                        <td>{{ stocks[stock]["price"] }}</td>
+                        <td>{{ stocks[stock]["total"] }}</td>
+                        <form action="/sell" method="post">
+                            <td><input name="symbol" value="{{ stock }}" type="hidden"></td>
+                            <td><input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Number" type="number" min="0"></td>
+                            <td><button class="btn btn-primary" type="submit">Sell</button></td>
+                        </form>  
+                        <form action="/buy" method="post">
+                            <td><input name="symbol" value="{{ stock }}" type="hidden"></td>
+                            <td><input autocomplete="off" class="form-control mx-auto w-auto" name="number" placeholder="Number" type="number" min="0"></td>
+                            <td><button class="btn btn-primary" type="submit">Buy</button></td>
+                        </form>                  
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+    <br>
+    <h3>Nothing here</h3>
+    <br>
+    {% endif %}
+{% endblock %}

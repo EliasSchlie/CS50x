@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h1>Portfolio</h1>
+    <br>
+    <h4>
+        Cash: {{ cash }}
+    </h4>
+    <h4>
+        Total: {{ total }}
+    </h4>
+    <br><br>
+    {% if t %}
+        <h2>Stocks</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Time</th>
+                    <th>Symbol</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trans in t %}
+                    <tr>
+                        <td>{% if trans.amount > 0 %}
+                            BUY
+                        {% else %}
+                            SELL
+                        {% endif %}</td>
+                        <td>{{ trans.date }}</td>
+                        <td>{{ trans.symbol }}</td>
+                        <td>{{ trans.amount }}</td>
+                        <td>{{ trans.price }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+    <br>
+    <h3>No transactios jet</h3>
+    <br>
+    {% endif %}
+{% endblock %}
